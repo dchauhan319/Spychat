@@ -2,6 +2,19 @@ print "Hello"
 print "Welcome to Spychat"
 spy_exist = raw_input("Already exist Y or N")
 if spy_exist.upper()== "Y" :
+    print "Already existing spy"
+    menu = True
+    while menu:
+        choice = input("1 Update status, 2 Exit")
+        if choice == 1:
+            status = raw_input("Enter status")
+            print status
+        elif choice == 2:
+            print "You are logged out!"
+            menu = False
+        else:
+            print "Wrong choice"
+elif spy_exist.upper() == "N":
     spy_name = raw_input("What is your Spy name")
     if len(spy_name)>=2:
         print spy_name
@@ -18,6 +31,7 @@ if spy_exist.upper()== "Y" :
                 print "Good Spy"
             else:
                 print "Bad Spy"
+            print "Spy authenticated, Welcome %s , age %d , rating %.2f" %(spy_name,spy_age,spy_rating)
         else:
             print "Wrong choice"
     else:
